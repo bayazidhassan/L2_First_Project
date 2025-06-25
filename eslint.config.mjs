@@ -1,8 +1,8 @@
 import js from '@eslint/js';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
-const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
 
 export default defineConfig([
   {
@@ -20,7 +20,7 @@ export default defineConfig([
       'no-unused-vars': 'error',
       'prefer-const': ['error', { ignoreReadBeforeAssign: true }],
       'no-unused-expressions': 'error',
-      'no-console': 'warn',
+      //'no-console': 'warn', //for server
       'no-undef': 'error',
     },
   },
