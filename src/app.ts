@@ -11,6 +11,14 @@ app.use(cors());
 //application routes
 app.use('/api/v1/student', studentRoutes);
 
+//if no matching route is found
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: `Route ${req.method} ${req.originalUrl} not found`,
+  });
+});
+
 const controllerFunction = (req: Request, res: Response) => {
   res.send('Hello World!');
 };
